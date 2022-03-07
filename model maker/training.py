@@ -47,8 +47,8 @@ for i, image_path in enumerate(image_paths):
 # select model architecture
 #spec = model_spec.get('efficientdet_lite0')
 spec = object_detector.EfficientDetSpec(
-  model_name='efficientdet-lite0',
-  uri='https://tfhub.dev/tensorflow/efficientdet/lite0/feature-vector/1', 
+  model_name='efficientdet-lite3',
+  uri='https://tfhub.dev/tensorflow/efficientdet/lite3/feature-vector/1', 
   hparams={'max_instances_per_image': 200})
 
 # Load the dataset
@@ -63,4 +63,4 @@ time.sleep(10)
 model.evaluate(validation_data)
 
 # Export tensorflow model
-model.export(export_dir='./models/coin_best_16_mm')
+model.export(export_dir='./models/coin_best_16_lite3_mm')
